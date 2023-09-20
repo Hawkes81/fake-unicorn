@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+// const authorization = require('./middleware/authorization');
+const authentication = require('./middleware/authentication');
 const port = process.env.PORT || 3000;
 const boardGamesRouter = require('./routes/boardGames');
 
@@ -14,7 +16,7 @@ app.get('/', (req, res) => {
   res.json({ message: 'ok' });
 });
 
-app.use('/board-games', boardGamesRouter);
+app.use('/board-games', authentication, boardGamesRouter);
 /* Error handler middleware */
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
