@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "echo There are no tests at this time!"
   },
   "author": "",
   "license": "ISC",
